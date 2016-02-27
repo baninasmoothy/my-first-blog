@@ -9,17 +9,16 @@
 			<h1><a href="">Nina's Blog</a></h1>
 		</div>
 
-		<div>
-			<p>published: Feb 27th, 2016, 15:54</p>
-			<h2><a href="">My first post</a></h2>
-			<p>Hello this is just some text I put together. Awesome!</p>
-		</div>
+{% for post in posts %}
+	
+	<div>
+		<p>published: {{ post.published_date }}</p>
+		<h1><a href=""> {{ post.title }}</a></h1>
+		<p>{{ post.text|linebreaks }}</p>
+	</div>
 
-		<div>
-			<p>published: Feb 27th, 2016, 15:55</p>
-			<h2><a href="">My second post</a></h2>
-			<p>Aaaaaand some more text just for the heck of it.</p>
-		</div>
+{% endfor %}
+
 	</body>
 
 </html>
